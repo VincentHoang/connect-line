@@ -1,16 +1,16 @@
 package com.vhoang.connectline.screen;
 
 import com.gameframework.Screen;
-import com.vhoang.connectline.model.GameLogic;
+import com.vhoang.connectline.model.ConnectLine;
 
 import javax.inject.Inject;
 
 public class GameScreen implements Screen {
 
-    private GameLogic gameLog;
+    private ConnectLine gameLog;
 
     @Inject
-    public GameScreen(GameLogic gameLog) {
+    public GameScreen(ConnectLine gameLog) {
         this.gameLog = gameLog;
     }
 
