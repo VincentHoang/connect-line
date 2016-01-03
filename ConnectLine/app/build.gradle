@@ -33,6 +33,7 @@ dependencies {
     provided 'org.glassfish:javax.annotation:10.0-b28'
 
     provided 'org.projectlombok:lombok:1.16.6'
+    apt "org.projectlombok:lombok:1.16.6"
 
     compile 'com.google.guava:guava:19.0'
     androidTestCompile 'junit:junit:4.12'

@@ -5,6 +5,7 @@ import com.gameframework.Input;
 import com.gameframework.Screen;
 import com.google.common.collect.Maps;
 import com.vhoang.connectline.MainGame;
+import com.vhoang.connectline.model.Board;
 import com.vhoang.connectline.screen.ScreenType;
 import com.vhoang.connectline.TouchInput;
 import com.vhoang.connectline.screen.GameScreen;
@@ -27,6 +28,11 @@ public class GameModule {
     @Singleton @Provides
     Input provideInput(TouchInput touchInput) {
         return touchInput;
+    }
+
+    @Singleton @Provides
+    Board provideBoard() {
+        return new Board();
     }
 
     @Provides @Singleton
