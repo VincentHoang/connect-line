@@ -89,7 +89,6 @@ public class WinCheckerTest {
         board.placeToken(PLAYER2, 1, 3);
         board.placeToken(PLAYER1, 1, 4);
         board.placeToken(PLAYER1, 1, 5);
-        board.placeToken(PLAYER1, 1, 6);
 
         assertThat(winChecker.win(PLAYER1, 1, 0), is(false));
         assertThat(winChecker.win(PLAYER2, 1, 1), is(false));
@@ -97,7 +96,6 @@ public class WinCheckerTest {
         assertThat(winChecker.win(PLAYER1, 1, 3), is(false));
         assertThat(winChecker.win(PLAYER1, 1, 4), is(false));
         assertThat(winChecker.win(PLAYER2, 1, 5), is(false));
-        assertThat(winChecker.win(PLAYER1, 1, 6), is(false));
     }
 
     @Test
@@ -128,15 +126,15 @@ public class WinCheckerTest {
 
     @Test
     public void not_win_if_non_consecutive_diagonal_incline2() {
+        board.placeToken(PLAYER1, 2, 2);
         board.placeToken(PLAYER1, 3, 3);
         board.placeToken(PLAYER2, 4, 4);
         board.placeToken(PLAYER1, 5, 5);
-        board.placeToken(PLAYER1, 6, 6);
 
+        assertThat(winChecker.win(PLAYER1, 2, 2), is(false));
         assertThat(winChecker.win(PLAYER1, 3, 3), is(false));
         assertThat(winChecker.win(PLAYER1, 4, 4), is(false));
         assertThat(winChecker.win(PLAYER1, 5, 5), is(false));
-        assertThat(winChecker.win(PLAYER1, 6, 6), is(false));
     }
 
     @Test
@@ -147,7 +145,6 @@ public class WinCheckerTest {
         board.placeToken(PLAYER1, 3, 3);
         board.placeToken(PLAYER2, 4, 4);
         board.placeToken(PLAYER1, 5, 5);
-        board.placeToken(PLAYER1, 6, 6);
 
 
         assertThat(winChecker.win(PLAYER1, 0, 0), is(false));
@@ -156,7 +153,6 @@ public class WinCheckerTest {
         assertThat(winChecker.win(PLAYER1, 3, 3), is(false));
         assertThat(winChecker.win(PLAYER1, 4, 4), is(false));
         assertThat(winChecker.win(PLAYER1, 5, 5), is(false));
-        assertThat(winChecker.win(PLAYER1, 6, 6), is(false));
     }
 
     @Test
@@ -174,16 +170,16 @@ public class WinCheckerTest {
 
     @Test
     public void win_if_consecutive_diagonal_decline2() {
-        board.placeToken(PLAYER1, 3, 6);
-        board.placeToken(PLAYER1, 4, 5);
-        board.placeToken(PLAYER1, 5, 4);
-        board.placeToken(PLAYER1, 6, 3);
+        board.placeToken(PLAYER1, 2, 5);
+        board.placeToken(PLAYER1, 3, 4);
+        board.placeToken(PLAYER1, 4, 3);
+        board.placeToken(PLAYER1, 5, 2);
 
 
-        assertThat(winChecker.win(PLAYER1, 3, 6), is(true));
-        assertThat(winChecker.win(PLAYER1, 4, 5), is(true));
-        assertThat(winChecker.win(PLAYER1, 5, 4), is(true));
-        assertThat(winChecker.win(PLAYER1, 6, 3), is(true));
+        assertThat(winChecker.win(PLAYER1, 2, 5), is(true));
+        assertThat(winChecker.win(PLAYER1, 3, 4), is(true));
+        assertThat(winChecker.win(PLAYER1, 4, 3), is(true));
+        assertThat(winChecker.win(PLAYER1, 5, 2), is(true));
     }
 
     @Test

@@ -4,7 +4,7 @@ import javax.inject.Inject;
 
 public class Board {
 
-    public static final int HEIGHT = 7;
+    public static final int HEIGHT = 6;
     public static final int WIDTH = 7;
 
     Cell[][] boardState;
