@@ -7,6 +7,7 @@ import org.mockito.Mock;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.not;
+import static org.mockito.Mockito.verify;
 
 public class ConnectLineTest {
 
@@ -15,11 +16,12 @@ public class ConnectLineTest {
 
     Board board;
     ConnectLine connectLine;
-    @Mock WinChecker winChecker;
+    WinChecker winChecker;
 
     @Before
     public void setup() {
         board = new Board();
+        winChecker = new WinChecker(board);
 
         connectLine = new ConnectLine(board, winChecker);
     }
@@ -80,6 +82,31 @@ public class ConnectLineTest {
             connectLine.placeToken(COLUMN);
         }
         connectLine.placeToken(COLUMN);
+    }
+
+    @Test
+    public void foundWinner_is_true_when_there_is_a_winner() {
+        connectLine.placeToken(COLUMN);
+        connectLine.placeToken(COLUMN+1);
+
+        connectLine.placeToken(COLUMN);
+        connectLine.placeToken(COLUMN+1);
+
+        connectLine.placeToken(COLUMN);
+        connectLine.placeToken(COLUMN+1);
+
+        connectLine.placeToken(COLUMN);
+
+        assertThat(connectLine.foundWinner(), is(true));
+    }
+
+    @Test
+    public void foundWinner_is_false_when_there_is_no_winner() {
+        for (int i=0; i<WinChecker.WIN_COUNT; i++) {
+            connectLine.placeToken(COLUMN);
+        }
+
+        assertThat(connectLine.foundWinner(), is(false));
     }
 
 }
