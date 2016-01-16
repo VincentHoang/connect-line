@@ -12,7 +12,7 @@ import static com.vh.model.Cell.PLAYER2;
 public class ConnectLine {
 
     @Getter private Cell turn;
-    private Board board;
+    @Getter private Board board;
     private WinChecker winChecker;
     private int[] rowPointers;
     private Optional<Winner> winner;
@@ -47,7 +47,7 @@ public class ConnectLine {
     }
 
     public boolean canPlaceToken(int column) {
-        return rowPointers[column] < Board.HEIGHT;
+        return rowPointers[column] < Board.HEIGHT && !winner.isPresent();
     }
 
     public boolean foundWinner() {
