@@ -7,6 +7,11 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.not;
 
+import controllers.connectline.gamelogic.model.Board;
+import controllers.connectline.gamelogic.model.Cell;
+import controllers.connectline.gamelogic.model.ConnectLine;
+import controllers.connectline.gamelogic.model.WinChecker;
+
 public class ConnectLineTest {
 
     private static final int COLUMN = 1;

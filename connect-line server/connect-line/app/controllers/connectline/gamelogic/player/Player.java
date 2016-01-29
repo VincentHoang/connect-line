@@ -1,4 +1,4 @@
-package controllers.gamelogic.player;
+package controllers.connectline.gamelogic.player;
 
 public interface Player {
     String getName();

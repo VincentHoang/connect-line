@@ -3,9 +3,12 @@ package controllers.gamelogic.model;
 import org.junit.Before;
 import org.junit.Test;
 
-import static controllers.gamelogic.model.Cell.*;
+import static controllers.connectline.gamelogic.model.Cell.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
+
+import controllers.connectline.gamelogic.model.Board;
+import controllers.connectline.gamelogic.model.WinChecker;
 
 public class WinCheckerTest {
 

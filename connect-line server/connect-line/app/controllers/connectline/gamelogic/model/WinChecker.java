@@ -1,4 +1,4 @@
-package controllers.gamelogic.model;
+package controllers.connectline.gamelogic.model;
 
 import javax.inject.Inject;
 

@@ -1,11 +1,11 @@
-package controllers.gamelogic.model;
+package controllers.connectline.gamelogic.model;
 
 import com.google.common.base.Optional;
 
 import javax.inject.Inject;
 
-import static controllers.gamelogic.model.Cell.PLAYER1;
-import static controllers.gamelogic.model.Cell.PLAYER2;
+import static controllers.connectline.gamelogic.model.Cell.PLAYER1;
+import static controllers.connectline.gamelogic.model.Cell.PLAYER2;
 
 public class ConnectLine {
 
